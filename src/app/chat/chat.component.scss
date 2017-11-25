@@ -1,0 +1,13 @@
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+button {
+  width: 30%;
+}
+
+.message-list {
+  max-height: 400px;
+  overflow-y: scroll;
+}

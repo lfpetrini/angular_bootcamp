@@ -1,0 +1,8 @@
+<ul class="list-group message-list" #messageList>
+  <app-chat-item *ngFor="let message of messages" [message]="message"></app-chat-item>
+</ul>
+
+<textarea placeholder="Type your message here, mate!" rows="4" [(ngModel)]="newMessage"></textarea>
+<div class="text-center">
+  <button class="btn btn-primary" (click)="sendMessage()">Send</button>
+</div>

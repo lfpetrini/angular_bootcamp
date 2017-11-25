@@ -1,0 +1,6 @@
+
+<li class="list-group-item" [ngClass]="{'myMessage' : amITheAuthor()}">
+  <p>{{!message.author ? 'Anonymous' : message.author}}</p>
+  <p>{{message.message}}</p>
+  <p>{{message.time | date: "HH:mm:ss aa"}}</p>
+</li>
