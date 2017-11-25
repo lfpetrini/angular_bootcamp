@@ -7,13 +7,11 @@ import { ConnectionService } from './connection.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  public users;
+  public users: any;
 
   constructor(private connectionService: ConnectionService) { }
 
   ngOnInit() {
-    this.connectionService.getUsers().subscribe( res => {
-      console.log(res);
-    });
+    this.connectionService.getUsers().subscribe( res => this.users = res , err => console.error(err)) ;
   }
 }
