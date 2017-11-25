@@ -1,7 +1,7 @@
   <div class="jumbotron">
       <h2 class="text-center">Bootchat</h2>
       <p>Hello, <span class="user">{{user}}</span>.</p>
-      <p>You joined on {{date | date: "HH:mm:ss aa"}} .</p>
+      <p>Your session started at {{date | date: "HH:mm:ss on yyyy-MM-dd"}}.</p>
       <p>
         <a [routerLink]="'chat'">Chat</a> |
         <a [routerLink]="'about'">About</a>
