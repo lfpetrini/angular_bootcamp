@@ -1,3 +1,31 @@
-.myMessage {
-  background: rgb(227, 236, 227);
+.my-message {
+  color: black;
+  background: #A0A0A0;
+}
+
+.others-message {
+  color: black;
+  background: #D0D0D0;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #505050;
+  display: inline-table;
+  text-align: center;
+  padding-top: 4px;
+  font-size: 30px;
+  font-weight: bold;
+  background: #A0A0A0;
+}
+
+.my-circle {
+  color: black;
+  background: #606060;
+}
+
+.date {
+  font-size: 12px;
 }

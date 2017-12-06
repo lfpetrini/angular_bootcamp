@@ -1,6 +1,12 @@
 
-<li class="list-group-item" [ngClass]="{'myMessage' : amITheAuthor()}">
-  <p>{{!message.author ? 'Anonymous' : message.author}}</p>
-  <p>{{message.message}}</p>
-  <p>{{message.time | date: "HH:mm:ss aa"}}</p>
+<li class="list-group-item" [ngClass]="{'my-message': amITheAuthor(), 'others-message': !amITheAuthor()}">
+  <div class="media">
+    <div class="media-left">
+      <span class="circle" [ngClass]="{'my-circle': amITheAuthor()}">{{!message.author ? '?' : message.author.charAt(0)}}</span>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{!message.author ? 'Anonymous' : message.author}} - <span class="date">{{message.time | date: "HH:mm:ss, dd/MM"}}</span></h4>
+      <p>{{message.message}}</p>
+    </div>
+  </div>
 </li>

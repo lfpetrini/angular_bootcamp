@@ -1,3 +1,4 @@
+import { ChatAuthService } from './login/chat-auth.service';
 import { routing } from './app.routes';
 import { ChatService } from './chat/chat.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { RouterModule } from '@angular/router';
 import { ConnectionService } from './about/connection.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ChatComponent,
     ChatItemComponent,
     ChatHeaderComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     routing
   ],
   providers: [
+    ChatAuthService,
     ChatService,
     ConnectionService
   ],
