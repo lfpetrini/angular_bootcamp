@@ -13,7 +13,7 @@ export class ChatComponent implements AfterViewInit, AfterViewChecked {
   private _autoScroll: boolean = true;
 
   public messages: any[] = [];
-  public newMessage: string;
+  public newMessage: string = '';
 
   constructor(private chatService: ChatService) {
     this.chatService.server.on('messages', message => {

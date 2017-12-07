@@ -4,5 +4,6 @@
 
 <textarea placeholder="Type your message here, mate!" rows="4" [(ngModel)]="newMessage"></textarea>
 <div class="text-center">
+  <p>Characters typed: {{newMessage.length}}</p>
   <button class="btn btn-primary" (click)="sendMessage()">Send</button>
 </div>

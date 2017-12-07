@@ -1,31 +1,81 @@
 .my-message {
+  text-align: right;
   color: black;
-  background: #A0A0A0;
+  background: #303030;
 }
 
 .others-message {
+  text-align: left;
   color: black;
-  background: #D0D0D0;
+  background: #303030;
 }
 
 .circle {
+  vertical-align: top;
+  margin: 8px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  color: #505050;
+  border-radius: 10%;
+  color: #739ddd;
   display: inline-table;
   text-align: center;
   padding-top: 4px;
   font-size: 30px;
   font-weight: bold;
-  background: #A0A0A0;
+  background: #424566;
 }
 
 .my-circle {
-  color: black;
-  background: #606060;
+  color: #424566;
+  background: #739ddd;
 }
 
 .date {
   font-size: 12px;
+}
+
+.talk-bubble {
+	margin: 5px;
+  display: inline-block;
+  position: relative;
+	width: 80%;
+	height: auto;
+	background-color: #dbdbdb;
+  border-radius: 10px;
+}
+
+.my-message .talk-bubble {
+	background-color: white;
+}
+
+.tri-right:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -12px;
+  top: 10px;
+	bottom: auto;
+	border: 10px solid;
+	border-color: white transparent transparent white;
+}
+
+.tri-left:before{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -12px;
+	right: auto;
+  top: 10px;
+	bottom: auto;
+	border: 10px solid;
+	border-color: #dbdbdb #dbdbdb transparent transparent;
+}
+
+.talktext{
+  padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
 }
