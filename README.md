@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
 
+It is just a simple chat client developed during the Angular2 bootcamp in Campinas on November 25th 2017.
+
+The server provided is really simple, it works with websockets and just receives and sends messages. Messages are only groups of author, text and date, so there is no way to authenticate, get current users and so on.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
