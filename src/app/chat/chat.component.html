@@ -3,11 +3,12 @@
   <app-chat-item *ngFor="let message of messages" [message]="message"></app-chat-item>
 </ul>
 
-<textarea placeholder="Type your message here, mate!" rows="4" [(ngModel)]="newMessage" (keyup)="keyUp($event)"></textarea>
-<div class="text-center">
-  <p>
-    Characters typed: {{newMessage.length}} &nbsp;-&nbsp;
-    <input type="checkbox" [checked]='autoScroll' (change)="autoScroll = !autoScroll" /> Autoscroll
-  </p>
+<p class="text-center">
+  Characters typed: {{newMessage.length}} &nbsp;-&nbsp;
+  <input type="checkbox" [checked]='autoScroll' (change)="autoScroll = !autoScroll"> Autoscroll
+</p>
+
+<div class="textarea">
+  <textarea placeholder="Type your message here, mate!" rows="4" [(ngModel)]="newMessage" (keyup)="keyUp($event)"></textarea>
   <button class="btn btn-primary" (click)="sendMessage()">Send</button>
 </div>

@@ -1,10 +1,18 @@
 textarea {
-    width: 100%;
+    width: 90%;
     resize: none;
 }
 
 button {
-  width: 30%;
+  padding: 3px;
+  overflow: hidden;
+  width: 9.5%;
+}
+
+.textarea {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .message-list {

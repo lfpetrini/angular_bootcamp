@@ -1,38 +1,3 @@
-<!--
-<li class="list-group-item" [ngClass]="{'my-message': amITheAuthor(), 'others-message': !amITheAuthor()}">
-  <div class="media">
-    <div class="media-left">
-      <span class="circle" [ngClass]="{'my-circle': amITheAuthor()}">{{!message.author ? '?' : message.author.charAt(0)}}</span>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">{{!message.author ? 'Anonymous' : message.author}} - <span class="date">{{message.time | date: "HH:mm:ss, dd/MM"}}</span></h4>
-      <p>{{message.message}}</p>
-    </div>
-  </div>
-
-<div class="talk-bubble tri-right round right-in">
-  <div class="talktext">
-    <p>{{message.message}}</p>
-  </div>
-</div>
-</li>
-
-<li class="container-fluid" [ngClass]="{'my-message': amITheAuthor(), 'others-message': !amITheAuthor()}">
-    <div class="row">
-        <div class="col-xs-11">
-          <div class="talk-bubble tri-right round">
-            <div class="talktext">
-              <h4>{{!message.author ? 'Anonymous' : message.author}} - <span class="date">{{message.time | date: "HH:mm:ss, dd/MM"}}</span></h4>
-              <p>{{message.message}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-1">
-            <div class="circle" [ngClass]="{'my-circle': amITheAuthor()}">{{!message.author ? '?' : message.author.charAt(0)}}</div>
-        </div>
-    </div>
-</li>-->
-
 <li [ngClass]="{'my-message': amITheAuthor(), 'others-message': !amITheAuthor()}">
   <div *ngIf="amITheAuthor(); then my_message else others_message"></div>
 </li>
