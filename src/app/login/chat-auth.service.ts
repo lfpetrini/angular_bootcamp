@@ -1,5 +1,4 @@
 import { ChatService } from './../chat/chat.service';
-import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
@@ -10,6 +9,7 @@ export class ChatAuthService implements CanActivate {
     if(this.chatService.user)
       return true;
     this.router.navigate(['/login']);
+    return false;
   }
 
   constructor(private router: Router, private chatService: ChatService) { }

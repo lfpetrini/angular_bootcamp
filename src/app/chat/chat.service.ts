@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as socketIO from 'socket.io-client';
+import { MessageBusService } from '../common/message-bus.service';
 
 @Injectable()
 export class ChatService {
@@ -9,13 +10,17 @@ export class ChatService {
   private _user: string = null;
   private _loginTime: Date;
 
-  constructor() {
-    this._server = socketIO(this._serverUrl);
+  constructor(private messageBus: MessageBusService) {
+    this.startServer();
     this._user = sessionStorage.getItem('user');
     let loginTime = sessionStorage.getItem('loginTime');
     if(loginTime && this._user) {
       this._loginTime = new Date(loginTime);
     }
+  }
+
+  public startServer(): void {
+    this._server = socketIO(this._serverUrl);
   }
 
   /**
@@ -28,11 +33,15 @@ export class ChatService {
     if(!user) {
       this._user = null;
       this._loginTime = null;
+      sessionStorage.clear();
     }
-    this._user = user;
-    sessionStorage.setItem('user', this._user);
-    this._loginTime = new Date();
-    sessionStorage.setItem('loginTime', this._loginTime.toUTCString());
+    else {
+      this._user = user;
+      sessionStorage.setItem('user', this._user);
+      this._loginTime = new Date();
+      sessionStorage.setItem('loginTime', this._loginTime.toUTCString());
+    }
+    this.messageBus.sendMessage('user', user);
   }
 
   get user(): string {

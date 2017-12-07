@@ -1,9 +1,13 @@
   <div class="jumbotron">
-      <h2 class="text-center">Bootchat</h2>
+    <h1 class="text-center">Bootchat</h1>
+    <span class="text-center" *ngIf="user">
       <p>Hello, <span class="user">{{user}}</span>.</p>
       <p>Your session started at {{date | date: "HH:mm:ss on yyyy-MM-dd"}}.</p>
-      <p>
-        <a [routerLink]="'chat'">Chat</a> |
-        <a [routerLink]="'about'">About</a>
-      </p>
+    </span>
+    <hr>
+    <p class="text-center">
+      <a [routerLink]="'chat'">Chat</a> |
+      <a [routerLink]="'about'">About</a>
+      <span *ngIf="user"> | <a (click)="chatService.setNewUser(null)" [routerLink]="'login'">Log out</a></span>
+    </p>
   </div>

@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { ConnectionService } from './about/connection.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { MessageBusService } from './common/message-bus.service';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { LoginComponent } from './login/login.component';
   providers: [
     ChatAuthService,
     ChatService,
-    ConnectionService
+    ConnectionService,
+    MessageBusService
   ],
   bootstrap: [AppComponent]
 })

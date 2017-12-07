@@ -1,8 +1,27 @@
 .user {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
+.jumbotron {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 5px;
+}
+
 p {
+  font-size: 16px;
   margin: 0px 100px;
+}
+
+a {
+  font-size: 18px;
+}
+
+hr {
+  width: 70%;
+  margin: 5px auto;
 }
