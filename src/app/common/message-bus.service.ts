@@ -22,7 +22,6 @@ export class MessageBusService {
      * Sends a new message in the bus
      */
     public sendMessage(key: string, value: any): void {
-      debugger;
       this.broadcastedMessage.next({key: key, value: value});
     }
 }
